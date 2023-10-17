@@ -4,7 +4,11 @@
 ## Description
 
 Online Eğitim platformu olarak dizayn edilen proje  dinamik olarak çalışmakta olup, Sistemin arka tarafında yönetilebileceği Admin - Öğrenci ve Eğitmen olarak 3 Farklı giriş kontrolü bulunmaktadır. 
-Platformun yönetimi tamamiyle Admin'de olup,  Eğitmen ve Öğrenci arasındaki ilişkisi Kurs, Yorumlar ve Eğitim videosu olarak sürdürülmektedir. Ayrıca Web arayüzünden Kayıt Dışı olan kullanıcıların  Mesaj gönderebileceği iletişim sayfasıda dinamik olarak mevcuttur.
+Platformun yönetimi tamamiyle Admin'de olup Eğitmen ve Öğrenci arasındaki ilişkisi; Kurs, Yorumlar ve Eğitim videosu olarak sürdürülmektedir. Eğitmenin kendi kursu için yükleyeceği eğitim videosunu, Öğrenci kendisinde tanımlı olan eğitimlerde izleyebilemektedir.
+Öğrenci Kendi kullanıcısında tanımlı olan kurslara erişim sağlayarak; ilgili kurslara da puanlama  yapabilmektedir.
+Admin, Eğitmen ve Öğrenci Login sayfalarında Alert methodu ile view içlerinde var olan listelerin toplam adetleri Sayfa başına entegre edildi.
+IEnumerable methodu ile farklı tablolardan veriler Foreach yardımı ile view sayfasına getirildi.
+Ayrıca Web arayüzünden, Kayıt dışı olan kullanıcıların  Mesaj gönderebileceği iletişim sayfasıda dinamik olup, gönderilen mesajlar direk olarak Amin'in kullanıcı paneline düşmektedir.
 Projenin Ekran görüntüleri Aşağıdaki gibidir.
 
 
