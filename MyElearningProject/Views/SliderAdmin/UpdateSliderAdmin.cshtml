@@ -1,0 +1,55 @@
+﻿@model MyElearningProject.DAL.Entities.HomeSlider
+
+@{
+    ViewBag.Title = "UpdateSliderAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+
+    </div>
+</div>
+
+
+<div class="card" style="text-align: center">
+    <h2><B>SLIDER GÜNCELLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    @*<label>Kategori ID</label>*@
+    @Html.TextBoxFor(x => x.SliderID, new { @class = "form-control", Type = "hidden" })
+    <br />
+
+    <label><b>ArkaPlan Resim</b></label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Başlık</b></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Slogan</b></label>
+    @Html.TextBoxFor(x => x.Slogan, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Yorum</b></label>
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control",rows=5,cols=5})
+    <br /><br />
+
+    <button class="btn btn-primary">Güncelle</button>
+    <br /><br />
+    <a href="/SliderAdmin/Index/" class="btn btn-outline-info"> << Slider Sayfasına Geri Dön</a>
+
+
+
+</form>

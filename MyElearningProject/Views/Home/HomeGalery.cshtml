@@ -1,0 +1,78 @@
+﻿@model List<MyElearningProject.DAL.Entities.Galery>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+@Html.Action("HomeHead", "Home")
+
+<head>
+    <style>
+        div.img {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+            div.img:hover {
+                border: 1px solid #777;
+            }
+
+            div.img img {
+                width: 100%;
+                height: auto;
+            }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    @Html.Action("HomeSpinner", "Home")
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    @Html.Action("HomeNavBar", "Home")
+    <!-- Navbar End -->
+    <!-- Contact Start -->
+
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Galeri</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="/Home/Index/">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">@ViewBag.breadcrumb</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div style="margin-top:50px">
+
+            @foreach (var x in Model)
+            {
+                <a target="_blank" href="@x.ImageUrl">
+                    <img src="@x.ImageUrl" width="300" height="200">
+                </a>
+            }
+        </div>
+    </div>
+
+
+    @Html.Action("HomeFooter", "Home")
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    @Html.Action("HomeScript", "Home")
+</body>
+</html>

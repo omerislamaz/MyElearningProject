@@ -1,0 +1,47 @@
+﻿@model MyElearningProject.DAL.Entities.Instructor
+@{
+    ViewBag.Title = "AddInstructor";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center" >
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>YENİ EĞİTMEN KAYIT SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+
+    <label><b>Eğitmen Adı</b></label>
+    <input type="text" name="Name" class="form-control" required />
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Eğitmen Soyadı</b></label>
+    <input type="text" name="Surname" class="form-control" required />
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Eğitmen Görseli</b></label>
+    <input type="text" name="ImageUrl" class="form-control" />
+
+    <br /><br />
+    <button class="btn btn-primary">Eğitmeni Kaydet</button>
+    <br /><br />
+    <a href="/Instructor/Index/" class="btn btn-outline-info"> << Eğitmen Sayfasına Geri Dön</a>
+
+
+</form>

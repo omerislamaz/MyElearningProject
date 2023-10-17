@@ -1,0 +1,56 @@
+﻿@model MyElearningProject.DAL.Entities.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+
+<div class="card" style="text-align: center">
+    <h2><B>REFERANS GÜNCELLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    <input type="hidden" name="TestimonialID" value="@Model.TestimonialID" />
+
+    <label><b>Referans Görseli</b></label>
+    <input type="text" name="ImageUrl" class="form-control" value="@Model.ImageUrl" />
+    <br /><br />
+
+    <label><b>Referans Statu</b></label>
+    <input type="text" name="Statu" class="form-control" value="@Model.Status" />
+    <br /><br />
+
+    <label><b>Referans Adı Soyadı</b></label>
+    <input type="text" name="NameSurname" class="form-control" value="@Model.NameSurname" />
+    <br /><br />
+
+    <label><b>Başlık</b></label>
+    <input type="text" name="Title" class="form-control" value="@Model.Title" />
+    <br /><br />
+
+    <label><b>Yorum</b></label>
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control",rows=5, Cols=5})
+    <br /><br />
+
+
+    <br /><br />
+    <button class="btn btn-primary">Referansı Güncelle</button>
+    <br /><br />
+    <a href="/Testimonial/Index/" class="btn btn-outline-info"> << Referans Sayfasına Geri Dön</a>
+
+
+</form>

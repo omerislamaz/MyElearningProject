@@ -1,0 +1,46 @@
+﻿@model MyElearningProject.DAL.Entities.FeatureSkill
+    @{
+    ViewBag.Title = "UpdateFeatureSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>FEATURED GÜNCELLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    <input type="hidden" name="SkillID" value="@Model.SkillID" />
+
+    <label><b>İcon</b></label>
+    <input type="text" name="IconUrl" class="form-control" value="@Model.IconUrl" />
+    <br /><br />
+
+    <label><b>Başlık</b></label>
+    <input type="text" name="Title" class="form-control" value="@Model.Title" />
+    <br /><br />
+
+    <label><b>Açıklama</b></label>
+    <input type="text" name="Comment" class="form-control" value="@Model.Comment" />
+    <br /><br />
+
+    <br /><br />
+    <button class="btn btn-primary">Güncelle</button>
+    <br /><br />
+    <a href="/FeatureSkill/Index/" class="btn btn-outline-info"> << Featured Sayfasına Geri Dön</a>
+
+
+</form>

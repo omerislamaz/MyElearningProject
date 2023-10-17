@@ -1,0 +1,107 @@
+﻿@model List<MyElearningProject.DAL.Entities.Address>
+
+@{
+    ViewBag.Title = "AdminAddressIndex";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center" >
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <br />
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>İLETİŞİM BİLGİLERİ EKRANI</B></h2>
+</div>
+
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-block">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th><b>Adres</b></th>
+                                <th><b>Telefon</b></th>
+                                <th><b>Email</b></th>
+                            </tr>
+
+                            <tr>
+                                <td>@item.Adres</td>
+                                <td>@item.Telephone</td>
+                                <td>@item.Email</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-block">
+                        <div style="overflow:scroll">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th><b>Google Adress Linki</b></th>
+                                    <td><pre width="20px">@item.GoogleAddressLink</pre></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-block">
+                        <div style="overflow:hidden">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="50px"><b>Facebook</b></th>
+                                    <td><pre>@item.Facebook</pre></td>
+                                </tr>
+                                <tr>
+                                    <th><b>İnstagram</b></th>
+                                    <td><pre>@item.Instagram</pre></td>
+                                </tr>
+                                <tr>
+                                    <th><b>Linkedin</b></th>
+                                    <td><pre>@item.LinkedIn</pre></td>
+                                </tr>
+                                <tr>
+                                    <th><b>x</b></th>
+                                    <td><pre>@item.X</pre></td>
+                                </tr>
+                            </table>
+                            <br /><br />
+                            <a href="/Contact/UpdateAdminAdress/@item.ID" class="btn btn-primary" style="float:right">Güncelle</a>
+                            <br /><br />
+                            <a href="/Contact/Index/" class="btn btn-outline-warning" style="float:right">Sitede Gör</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

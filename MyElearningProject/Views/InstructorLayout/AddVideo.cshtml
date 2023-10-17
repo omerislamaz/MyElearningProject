@@ -1,0 +1,53 @@
+﻿@model MyElearningProject.DAL.Entities.Video
+@{
+    ViewBag.Title = "AddVideo";
+    Layout = "~/Views/InstructorLayout/Index.cshtml";
+}
+
+
+<div class="row page-titles" style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Eğitmen Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>YENİ VİDEO EKLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    <label><b>Video Adını Giriniz</b></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+
+    <label><b>Video Adresini Yapıştırınız</b></label>
+    @Html.TextAreaFor(x => x.VideoUrl, new { @class = "form-control", rows = 3, cols = 3 })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+
+    <label><b>Kurs Seçin</b></label>
+    @Html.DropDownListFor(x => x.CourseID, (List<SelectListItem>)ViewBag.course, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+
+
+
+    <button class="btn btn-primary">Kaydet</button>
+    <br /><br />
+    <a href="/InstructorLayout/CreateCourse/" class="btn btn-outline-info"> << Kurs Ekleme Sayfasına Geri Dön</a>
+
+
+</form>
+

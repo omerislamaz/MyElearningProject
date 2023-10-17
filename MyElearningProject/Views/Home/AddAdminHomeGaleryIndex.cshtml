@@ -1,0 +1,44 @@
+﻿@model MyElearningProject.DAL.Entities.Galery
+@{
+    ViewBag.Title = "AddAdminHomeGaleryIndex";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="row page-titles" style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>YENİ RESİM EKLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    <label><b>Resim Detay Giriniz</b></label>
+    @Html.TextBoxFor(x => x.ImageName, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Resim Adresini Giriniz</b></label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Tarih Giriniz</b></label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <button class="btn btn-primary">Kaydet</button>
+    <br /><br />
+    <a href="/Home/AdminHomeGaleryIndex/" class="btn btn-outline-info"> << Galeri Sayfasına Geri Dön</a>
+
+</form>

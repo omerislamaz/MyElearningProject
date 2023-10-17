@@ -1,0 +1,40 @@
+﻿@model List<MyElearningProject.DAL.Entities.Course>
+
+<div class="tab-pane" id="settings" role="tabpanel">
+    <div class="card-block">
+        @foreach (var x in Model)
+        {
+
+            int toplamDakika = x.Duration;
+            int saat = toplamDakika / 60;
+            int dakika = toplamDakika % 60;
+            ViewBag.saatDakika = saat + " saat " + dakika + " dakika";
+
+
+            <div class="sl-item">
+                <div class="sl-left"></div>
+                <div class="sl-right">
+                    <div>
+                        <a href="#" class="link">@x.Instructor.Name @x.Instructor.Surname</a> <span class="sl-date"><b>Eğitim Süresi:</b>  @ViewBag.saatDakika</span>
+                        <div class="m-t-20 row">
+                            <div class="col-md-3 col-xs-12"><img src="@x.ImageUrl" alt="user" class="img-responsive radius"></div>
+                            <div class="col-md-9 col-xs-12">
+                                <div class="row">
+                                    <div style="margin-bottom:auto"><strong>Kurs Adı :</strong> @x.Title</div>
+                                    <br /><br />
+                                    <p> @x.Description </p>
+                                </div>
+                                <br /><br />
+                                <div class="row">
+                                    <div style="align-items:flex-end"><a href="#" class="btn btn-success"> Kursa Git </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">0 Yorum</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i> 4.7 Puan </a> </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        }
+    </div>
+</div>

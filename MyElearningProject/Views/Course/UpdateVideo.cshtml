@@ -1,0 +1,47 @@
+﻿@model MyElearningProject.DAL.Entities.Video
+@{
+    ViewBag.Title = "UpdateVideo";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles" style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>VİDEO GÜNCELLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.VideoID)
+
+    <label><b>Video Adı</b></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Video Adresi</b></label>
+    @Html.TextAreaFor(x => x.VideoUrl, new { @class = "form-control", rows = 3, cols = 3 })
+    <br /><br />
+
+    <label><b>Kurs Seçin</b></label>
+    @Html.DropDownListFor(x => x.CourseID, (List<SelectListItem>)ViewBag.course, new { @class = "form-control" })
+    <br /><br />
+
+
+    <button class="btn btn-primary">Güncelle</button>
+    <br /><br />
+    <a href="/Course/Index/" class="btn btn-outline-info"> << Kurs Sayfasına Geri Dön</a>
+
+
+</form>
+

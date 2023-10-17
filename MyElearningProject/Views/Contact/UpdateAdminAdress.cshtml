@@ -1,0 +1,75 @@
+﻿@model MyElearningProject.DAL.Entities.Address
+
+@{
+    ViewBag.Title = "UpdateAdminAdress";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+
+
+<div class="card" style="text-align: center">
+    <h2><B>İLETİŞİM BİLGİLERİ GÜNCELLEME EKRANI</B></h2>
+</div>
+
+
+<form method="post">
+
+    @*<label>ID</label>*@
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", Type = "hidden" })
+    <br />
+
+    <label><b>Adres</b></label>
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Telefon</b></label>
+    @Html.TextBoxFor(x => x.Telephone, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Email</b></label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br /><br />
+
+
+    <label><b>Google Adresi Linki</b></label>
+    @Html.TextAreaFor(x => x.GoogleAddressLink, new { @class = "form-control", rows = 5, cols = 5 })
+    <br /><br />
+
+    <label><b>Facebook</b></label>
+    @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Instagram</b></label>
+    @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>Linkedin</b></label>
+    @Html.TextBoxFor(x => x.LinkedIn, new { @class = "form-control" })
+    <br /><br />
+
+    <label><b>X</b></label>
+    @Html.TextBoxFor(x => x.X, new { @class = "form-control" })
+    <br /><br />
+
+
+
+    <br /><br />
+    <button class="btn btn-primary">Güncelle</button>
+    <br /><br />
+    <a href="/Contact/AdminAddressIndex/" class="btn btn-outline-info"> << Adress Bilgileri Sayfasına Geri Dön</a>
+
+
+
+</form>

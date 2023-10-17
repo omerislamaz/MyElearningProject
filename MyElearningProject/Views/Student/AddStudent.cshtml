@@ -1,0 +1,52 @@
+﻿@model MyElearningProject.DAL.Entities.Student
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center" >
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>YENİ ÖĞRENCİ KAYIT SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+
+    <label><b>Öğrenci Adı</b></label>
+    <input type="text" name="Name" class="form-control" required />
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Öğrenci Soyadı</b></label>
+    <input type="text" name="Surname" class="form-control" required />
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Öğrenci Mail Adresi</b></label>
+    <input type="email" name="Email" class="form-control" />
+    <br /><br />
+
+    <label><b>Öğrenci Şifre</b></label>
+    <input type="password" name="Password" class="form-control" />
+    <br /><br />
+
+    <button class="btn btn-primary">Öğrenciyi Kaydet</button>
+    <br /><br />
+    <a href="/Student/Index/" class="btn btn-outline-info"> << Öğrenci Sayfasına Geri Dön</a>
+
+
+</form>
+

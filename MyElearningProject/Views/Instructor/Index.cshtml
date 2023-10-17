@@ -1,0 +1,73 @@
+﻿@model List<MyElearningProject.DAL.Entities.Instructor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int say = 0;
+}
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>EĞİTMEN LİSTESİ</B></h2>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="alert alert-success" role="alert">
+        <b>
+            Toplam <strong>@Model.Count()</strong> Eğitmen bulumaktadır.
+        </b>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        Kayıtlı Eğitmen Bulunmuyor !
+    </div>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th>Sıra</th>
+                        <th>Görsel</th>
+                        <th>Eğitmen Adı Soyadı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Kurslar</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        say++;
+                        <tr>
+                            <td>@say</td>
+                            <td><img src="@item.ImageUrl" style="height:80px;width:100px; border-radius:50%" /></td>
+                            <td>@item.Name @item.Surname</td>
+                            <td><a href="/Instructor/DeleteInstructor/@item.InstructorID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Instructor/UpdateInstructor/@item.InstructorID" class="btn btn-outline-success">Güncelle</a>  </td>
+                            <td><a href="/Instructor/#/@item.InstructorID" class="btn btn-outline-warning">Kurslar</a>  </td>
+                        </tr>
+                    }
+
+                </table>
+                <a href="/Instructor/AddInstructor/" class="btn btn-outline-primary">Yeni Eğitmen Girişi</a>
+
+            </div>
+        </div>
+    </div>
+</div>

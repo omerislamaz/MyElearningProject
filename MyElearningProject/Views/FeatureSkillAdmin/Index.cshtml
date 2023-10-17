@@ -1,0 +1,71 @@
+﻿@model List<MyElearningProject.DAL.Entities.FeatureSkill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int say = 0;
+}
+
+
+<div class="row page-titles"  style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Admin Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>FEATURED LİSTESİ</B></h2>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="alert alert-success" role="alert">
+        <b>
+            Toplam <strong>@Model.Count()</strong> Featured bulumaktadır.
+        </b>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        Kayıtlı Featured Bulunmuyor !
+    </div>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th>Sıra</th>
+                        <th>İcon</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>Güncelle</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        say++;
+                        <tr>
+                            <td>@say</td>
+                            <td><img src="@item.IconUrl" style="height:80px;width:100px;"></td>
+                            <td>@item.Title</td>
+                            <td>@item.Comment</td>
+                            <td><a href="/FeatureSkillAdmin/UpdateFeatureSkill/@item.SkillID" class="btn btn-outline-success">Güncelle</a>  </td>
+                        </tr>
+                    }
+
+                </table>
+                <div style="float:right"><a href="/Home/Index" class="btn btn-outline-info">Sitede Gör</a></div>
+            </div>
+        </div>
+    </div>
+</div>

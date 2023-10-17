@@ -1,0 +1,69 @@
+﻿@model MyElearningProject.DAL.Entities.Course
+@{
+    ViewBag.Title = "UpdateCourse";
+    Layout = "~/Views/InstructorLayout/Index.cshtml";
+}
+
+
+<div class="row page-titles" style="background-color:aliceblue">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">E-Learning Eğitmen Paneli</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Ana Sayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.breadcrumb</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+    </div>
+</div>
+
+<div class="card" style="text-align: center">
+    <h2><B>KURS GÜNCELLEME SAYFASI</B></h2>
+</div>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.CourseID)
+
+    <label><b>Kurs Adını Giriniz</b></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Kurs Fiyatını Giriniz</b></label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Kurs Süresini Giriniz</b></label>
+    @Html.TextBoxFor(x => x.Duration, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Kurs Görselini Giriniz</b></label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+    <label><b>Kategoriyi Seçiniz</b></label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+
+    <label><b>Eğitmen Seçiniz</b></label>
+    @Html.DropDownListFor(x => x.InstructorID, (List<SelectListItem>)ViewBag.i, new { @class = "form-control" })
+    <FONT COLOR="red" size="1">*Zorunlu Alan</FONT>
+    <br /><br />
+
+
+    <button class="btn btn-primary">Kursu Güncelle</button>
+
+    <br /><br />
+    <a href="/InstructorLayout/CourseIndex/" class="btn btn-outline-info"> << Kurs Sayfasına Geri Dön</a>
+
+
+</form>
+
+
